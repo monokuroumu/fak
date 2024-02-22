@@ -1,1 +1,1 @@
-import "examples/cheapis/keymap.ncl"
+import "examples/3x3_macropad/keymap.ncl"
