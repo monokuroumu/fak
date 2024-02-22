@@ -1,1 +1,1 @@
-import "examples/3x3_macropad/keymap.ncl"
+import "kazik/keymap.ncl"

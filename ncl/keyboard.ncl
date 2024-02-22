@@ -1,1 +1,1 @@
-import "examples/3x3_macropad/keyboard.ncl"
+import "kazik/keyboard.ncl"
