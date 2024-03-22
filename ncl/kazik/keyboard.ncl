@@ -1,11 +1,11 @@
-let { MatrixKey, .. } = import "../fak/keyboard.ncl" in
+let { ColToRowKey, RowToColKey, .. } = import "../fak/keyboard.ncl" in
 let { CH552T, .. } = import "../fak/mcus.ncl" in
 
 {
   mcu = CH552T,
   matrix = {
-    cols = [16, 16, 15, 15, 12, 12, 11, 11, 10, 10],
-    rows = [30, 31, 32, 33]
+    cols = [15, 15, 31, 34, 35],
+    rows = [32, 11, 12, 13]
   },
   usb_dev = {
     vendor_id = 43962, # 0xABBA
@@ -13,10 +13,12 @@ let { CH552T, .. } = import "../fak/mcus.ncl" in
     product_ver = 256, # 0x0100
   },
   keys =
-    let M = MatrixKey in
+    let C = ColToRowKey in
+    let R = RowToColKey in
     [
-      M 0 0, M 1 0, M 2 0, M 3 0, M 4 0, M 5 0, M 6 0, M 7 0, M 8 0, M 9 0,
-      M 0 1, M 1 1, M 2 1, M 3 1, M 4 1, M 5 1, M 6 1, M 7 1, M 8 1,
-      M 9 1, M 0 2, M 1 2, M 2 2, M 3 2, M 4 2, M 5 2, M 6 2, M 7 2,
-      M 9 2, M 0 3, M 1 3, M 2 3, M 4 3, M 5 3,    ]
+      R 0 0, C 0 0, R 1 0, C 1 0, R 2 0, C 2 0, R 3 0, C 3 0, R 4 0, C 4 0,
+      R 0 1, C 0 1, R 1 1, C 1 1, R 2 1, C 2 1, R 3 1, C 3 1, R 4 1, 
+      C 4 1, R 0 2, C 0 2, R 1 2, C 1 2, R 2 2, C 2 2, R 3 2, C 3 2,
+      R 4 2,        R 0 3, C 0 3,        C 1 3, R 2 3,        R 3 3,
+    ]
 }
